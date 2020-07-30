@@ -1,0 +1,234 @@
+{
+    "resources": [
+        {
+            "type": "account",
+            "resourcePath": "/account",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "user",
+            "resourcePath": "/account/%s/user",
+            "fields": [
+                {
+                    "name": "username",
+                    "type": "string"
+                },
+                {
+                    "name": "password",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "project",
+            "resourcePath": "/account/%s/user/%s/project",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "entity",
+            "resourcePath": "/account/%s/user/%s/project/%s/entity",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "account": [
+        {
+            "id": "1",
+            "resourceName": "/account/1",
+            "parents": [],
+            "children": [
+                {
+                    "resourceType": "user",
+                    "resourceName": "/account/1/user/1"
+                }
+            ],
+            "name": "Intranet Inc."
+        },
+        {
+            "id": "2",
+            "resourceName": "/account/2",
+            "parents": [],
+            "children": [
+                {
+                    "resourceType": "user",
+                    "resourceName": "/account/2/user/2"
+                },
+                {
+                    "resourceType": "user",
+                    "resourceName": "/account/2/user/3"
+                }
+            ],
+            "name": "Corben A/S"
+        },
+        {
+            "id": "3",
+            "resourceName": "/account/3",
+            "parents": [],
+            "children": [
+                {
+                    "resourceType": "user",
+                    "resourceName": "/account/3/user/4"
+                },
+                {
+                    "resourceType": "user",
+                    "resourceName": "/account/3/user/5"
+                },
+                {
+                    "resourceType": "user",
+                    "resourceName": "/account/3/user/6"
+                }
+            ],
+            "name": "Boulder SRL"
+        }
+    ],
+    "user": [
+        {
+            "id": "1",
+            "resourceName": "/account/1/user/1",
+            "parents": [
+                {
+                    "resourceType": "account",
+                    "resourceName": "/account/1"
+                }
+            ],
+            "children": [
+                {
+                    "resourceType": "project",
+                    "resourceName": "/account/1/user/1/project/1"
+                }
+            ],
+            "name": "Dan Mihail",
+            "username": "user1",
+            "password": "pass",
+            "accountId": "1"
+        },
+        {
+            "id": "2",
+            "resourceName": "/account/2/user/2",
+            "parents": [
+                {
+                    "resourceType": "account",
+                    "resourceName": "/account/2"
+                }
+            ],
+            "children": [],
+            "name": "Ion Bogdea",
+            "username": "user2",
+            "password": "pass",
+            "accountId": "2"
+        },
+        {
+            "id": "3",
+            "resourceName": "/account/2/user/3",
+            "parents": [
+                {
+                    "resourceType": "account",
+                    "resourceName": "/account/2"
+                }
+            ],
+            "children": [],
+            "name": "Manea Spranceana",
+            "username": "user3",
+            "password": "pass",
+            "accountId": "2"
+        },
+        {
+            "id": "4",
+            "resourceName": "/account/3/user/4",
+            "parents": [
+                {
+                    "resourceType": "account",
+                    "resourceName": "/account/3"
+                }
+            ],
+            "children": [],
+            "name": "Alea Zghibor",
+            "username": "user4",
+            "password": "pass",
+            "accountId": "3"
+        },
+        {
+            "id": "5",
+            "resourceName": "/account/3/user/5",
+            "parents": [
+                {
+                    "resourceType": "account",
+                    "resourceName": "/account/3"
+                }
+            ],
+            "children": [],
+            "name": "Bing Ani",
+            "username": "user5",
+            "password": "pass",
+            "accountId": "3"
+        },
+        {
+            "id": "6",
+            "resourceName": "/account/3/user/6",
+            "parents": [
+                {
+                    "resourceType": "account",
+                    "resourceName": "/account/3"
+                }
+            ],
+            "children": [],
+            "name": "Carbin Dalar",
+            "username": "user6",
+            "password": "pass",
+            "accountId": "3"
+        }
+    ],
+    "project": [
+        {
+            "id": "1",
+            "resourceName": "/account/3/user/6/project/1",
+            "parents": [
+                {
+                    "resourceType": "user",
+                    "resourceName": "/account/1/user/1"
+                }
+            ],
+            "children": [
+                {
+                    "resourceType": "entity",
+                    "resourceName": "/account/3/user/6/project/1/entity/1"
+                }
+            ],
+            "name": "Test project 1",
+            "userId": 1
+        }
+    ],
+    "entity": [
+        {
+            "id": "1",
+            "resourceName": "/account/3/user/6/project/1/entity/1",
+            "parents": [
+                {
+                    "resourceType": "project",
+                    "resourceName": "/account/1/user/1/project/1"
+                }
+            ],
+            "children": [],
+            "name": "Entity 1",
+            "projectId": 1
+        }
+    ]
+}
