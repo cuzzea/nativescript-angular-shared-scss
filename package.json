@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.0",
-    "@angular/cli": "~8.3.0",
+    "@angular/cli": "~15.2.6",
     "@angular/compiler-cli": "~8.2.0",
     "@nativescript/schematics": "~1.0.0",
     "@nativescript/tslint-rules": "~0.0.5",
